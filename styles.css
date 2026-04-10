@@ -96,6 +96,25 @@ body {
   transition: transform 220ms ease;
 }
 
+.modal-content-grid {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(125, 211, 252, 0.45) rgba(255, 255, 255, 0.06);
+}
+
+.modal-content-grid::-webkit-scrollbar {
+  width: 10px;
+}
+
+.modal-content-grid::-webkit-scrollbar-track {
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.modal-content-grid::-webkit-scrollbar-thumb {
+  border-radius: 9999px;
+  background: linear-gradient(180deg, rgba(125, 211, 252, 0.75), rgba(141, 231, 199, 0.75));
+}
+
 #topic-modal.is-open {
   pointer-events: auto;
   opacity: 1;

@@ -1,14 +1,30 @@
 const initialTopics = [
   {
     id: 1,
-    title: 'Que es Scrum',
-    summary: 'Una introduccion simple al marco de trabajo agil y su proposito.',
+    title: 'Introducción',
+    summary: 'El uso de SCRUM fuera de los limites del desarrollo de software.',
     stage: 'todo',
     accent: 'border-board-sand/30',
-    bullets: [
-      'Define Scrum como un marco agil para organizar trabajo en ciclos cortos.',
-      'Explica por que se centra en colaboracion, adaptacion y entrega continua de valor.',
-      'Aterriza la idea con una frase breve y un ejemplo cotidiano.',
+    presenter: {
+      name: 'Michael',
+      avatar: 'https://media.licdn.com/dms/image/v2/D4E03AQE8c7l8nAP4qQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1718315583698?e=1777507200&v=beta&t=Au691nCXo4C55w1KX8RjkUlCVSK7bcP9aEzIJfpoxOE',
+    },
+    content: [
+      {
+        title: 'SCRUM mas alla del software',
+        image: 'https://i.ytimg.com/vi/7KQ0r6B1suw/maxresdefault.jpg',
+        text: 'SCRUM ha demostrado ser una metodologia efectiva para gestionar proyectos complejos y dinamicos. Aunque se originó para el desarrollo de software, sus principios de iteracion, colaboracion y adaptacion continua pueden aplicarse en una amplia variedad de contextos, desde proyectos academicos hasta implementaciones en ambitos gubernamentales',
+      },
+      {
+        title: 'Idea clave para explicar',
+        image: '',
+        text: 'Su valor principal esta en permitir que el equipo aprenda mientras avanza. En lugar de esperar hasta el final para ver si algo funciona, Scrum propone revisar frecuentemente el progreso, detectar problemas temprano y ajustar el plan de forma continua.',
+      },
+      {
+        title: 'Ejemplo rapido',
+        image: '',
+        text: 'Puedes compararlo con un equipo universitario que debe entregar un proyecto por fases. En vez de trabajar todo al final, se organizan por ciclos cortos, revisan avances cada pocos dias y mejoran sobre la marcha.',
+      },
     ],
     tip: 'Empieza con una definicion corta y conecta rapido con un ejemplo para enganchar al publico.',
   },
@@ -18,10 +34,26 @@ const initialTopics = [
     summary: 'Scrum Master, Product Owner y Developers con sus responsabilidades.',
     stage: 'todo',
     accent: 'border-board-sky/30',
-    bullets: [
-      'Muestra los tres roles principales y que decision toma cada uno.',
-      'Evita describirlos como cargos jerarquicos; enfatiza responsabilidad.',
-      'Puedes compararlos con un equipo de proyecto real o universitario.',
+    presenter: {
+      name: 'Luis',
+      avatar: '',
+    },
+    content: [
+      {
+        title: 'Product Owner',
+        image: '',
+        text: 'Es la persona responsable de maximizar el valor del producto. Ordena prioridades, define que necesita el cliente o usuario y mantiene el Product Backlog alineado con los objetivos del proyecto.',
+      },
+      {
+        title: 'Scrum Master',
+        image: '',
+        text: 'Acompana al equipo para que Scrum se aplique correctamente. Facilita ceremonias, elimina impedimentos y promueve que el grupo trabaje de manera sana, ordenada y enfocada en la mejora continua.',
+      },
+      {
+        title: 'Developers',
+        image: '',
+        text: 'Son quienes convierten las ideas priorizadas en resultados concretos. No se limitan a programar; son el equipo que construye, prueba, ajusta y entrega el incremento al final del Sprint.',
+      },
     ],
     tip: 'Una tabla o analogia con un equipo de clase suele hacer esta parte mucho mas clara.',
   },
@@ -31,10 +63,26 @@ const initialTopics = [
     summary: 'Sprint, Planning, Daily, Review y Retrospective como ritmo del equipo.',
     stage: 'todo',
     accent: 'border-board-coral/30',
-    bullets: [
-      'Presenta los eventos como reuniones con un objetivo concreto, no solo como lista.',
-      'Relaciona cada evento con una pregunta: que haremos, como vamos, que aprendimos.',
-      'Deja visible que todos ocurren dentro del Sprint.',
+    presenter: {
+      name: 'Sara',
+      avatar: '',
+    },
+    content: [
+      {
+        title: 'Sprint y Planning',
+        image: '',
+        text: 'El Sprint es el periodo de trabajo donde el equipo desarrolla un objetivo concreto. Antes de empezar, en el Sprint Planning se define que se va a construir y como se abordara dentro de ese ciclo.',
+      },
+      {
+        title: 'Daily Scrum',
+        image: '',
+        text: 'Es una reunion breve y diaria que sirve para alinear al equipo. Permite revisar como va el avance, detectar bloqueos y coordinar el trabajo del dia sin perder foco.',
+      },
+      {
+        title: 'Review y Retrospective',
+        image: '',
+        text: 'La Sprint Review muestra lo construido y recoge retroalimentacion. La Retrospective, en cambio, se centra en como trabajo el equipo y que puede mejorar en el siguiente Sprint.',
+      },
     ],
     tip: 'Si narras los eventos como una semana de trabajo, la audiencia entiende mejor el flujo.',
   },
@@ -44,10 +92,26 @@ const initialTopics = [
     summary: 'Product Backlog, Sprint Backlog e Increment para visualizar progreso.',
     stage: 'todo',
     accent: 'border-board-mint/30',
-    bullets: [
-      'Explica que los artefactos hacen visible el trabajo y el valor entregado.',
-      'Asocia cada artefacto con una pregunta: que se quiere, que se hara ahora, que ya esta listo.',
-      'Puedes mostrar que este tablero es una representacion visual cercana al Sprint Backlog.',
+    presenter: {
+      name: 'Mateo',
+      avatar: '',
+    },
+    content: [
+      {
+        title: 'Product Backlog',
+        image: '',
+        text: 'Es la lista priorizada de todo lo que podria necesitar el producto. Cambia constantemente segun nuevas ideas, feedback o necesidades del negocio.',
+      },
+      {
+        title: 'Sprint Backlog',
+        image: '',
+        text: 'Es el conjunto de tareas seleccionadas para el Sprint actual. Representa el plan inmediato del equipo y puede visualizarse facilmente en un tablero como el que usas en esta exposicion.',
+      },
+      {
+        title: 'Increment',
+        image: '',
+        text: 'Es el resultado util y verificable del trabajo realizado durante el Sprint. Debe cumplir con los criterios de calidad definidos y estar listo para mostrarse o usarse.',
+      },
     ],
     tip: 'Conecta esta parte con el tablero que estas mostrando para que el concepto se sienta tangible.',
   },
@@ -57,10 +121,26 @@ const initialTopics = [
     summary: 'Ventajas, aplicaciones reales y una conclusion final potente.',
     stage: 'todo',
     accent: 'border-fuchsia-300/30',
-    bullets: [
-      'Resume beneficios como transparencia, enfoque, colaboracion y mejora continua.',
-      'Menciona rapidamente en que tipos de proyectos o equipos puede aplicarse.',
-      'Cierra con una idea final: Scrum ayuda a aprender y ajustar mientras se avanza.',
+    presenter: {
+      name: 'Julian',
+      avatar: '',
+    },
+    content: [
+      {
+        title: 'Beneficios principales',
+        image: '',
+        text: 'Scrum mejora la transparencia del trabajo, ayuda a priorizar mejor, fomenta la comunicacion continua y hace mas facil detectar errores o retrasos desde etapas tempranas.',
+      },
+      {
+        title: 'Donde se aplica',
+        image: '',
+        text: 'Aunque es muy conocido en desarrollo de software, tambien puede usarse en proyectos academicos, equipos de marketing, diseno, investigacion y cualquier contexto donde haya trabajo colaborativo e iterativo.',
+      },
+      {
+        title: 'Cierre sugerido',
+        image: '',
+        text: 'Puedes cerrar diciendo que Scrum no solo organiza tareas: tambien crea una forma de trabajar donde el equipo aprende, se adapta y entrega valor de manera constante.',
+      },
     ],
     tip: 'Termina con una conclusion de una sola frase que sea facil de recordar.',
   },
@@ -109,6 +189,13 @@ function createCard(topic) {
       <span class="pill ${topic.stage}">${getStageLabel(topic.stage)}</span>
       <span class="rounded-full border border-white/10 px-2 py-1 text-[11px] uppercase tracking-[0.2em] text-slate-400">Tema ${topic.id}</span>
     </div>
+    <div class="mb-4 flex items-center gap-3">
+      ${renderPresenterAvatar(topic.presenter)}
+      <div class="min-w-0">
+        <p class="text-xs uppercase tracking-[0.2em] text-slate-400">Expositor</p>
+        <p class="truncate text-sm font-semibold text-slate-200">${topic.presenter.name}</p>
+      </div>
+    </div>
     <h4 class="pr-4 font-display text-xl font-bold text-white">${topic.title}</h4>
     <p class="mt-3 text-sm leading-6 text-slate-300">${topic.summary}</p>
     <div class="mt-5 flex items-center justify-between text-xs text-slate-400">
@@ -123,6 +210,24 @@ function createCard(topic) {
   });
 
   return card;
+}
+
+function renderPresenterAvatar(presenter) {
+  if (presenter.avatar) {
+    return `
+      <img
+        src="${presenter.avatar}"
+        alt="Foto de ${presenter.name}"
+        class="h-12 w-12 rounded-full border border-white/15 object-cover"
+      />
+    `;
+  }
+
+  return `
+    <div class="flex h-12 w-12 items-center justify-center rounded-full border border-white/15 bg-white/10 text-sm font-bold text-white">
+      ${presenter.name.slice(0, 1).toUpperCase()}
+    </div>
+  `;
 }
 
 function renderBoard() {
@@ -164,15 +269,36 @@ function openModal(topicId) {
   modalTitle.textContent = topic.title;
   modalSubtitle.textContent = topic.summary;
   modalTip.textContent = topic.tip;
-  modalContent.innerHTML = topic.bullets
-    .map(
-      (bullet) => `
-        <div class="rounded-2xl border border-white/10 bg-white/5 px-4 py-3">
-          ${bullet}
-        </div>
+
+  const presenterBlock = `
+    <div class="mb-4 flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3">
+      ${renderPresenterAvatar(topic.presenter)}
+      <div>
+        <p class="text-xs uppercase tracking-[0.2em] text-slate-400">Expositor asignado</p>
+        <p class="text-sm font-semibold text-white">${topic.presenter.name}</p>
+      </div>
+    </div>
+  `;
+
+  modalContent.innerHTML =
+    presenterBlock +
+    topic.content
+      .map(
+        (section) => `
+        <article class="overflow-hidden rounded-3xl border border-white/10 bg-white/5">
+          ${
+            section.image
+              ? `<img src="${section.image}" alt="${section.title}" class="h-44 w-full object-cover" />`
+              : ''
+          }
+          <div class="p-5">
+            <h5 class="text-base font-bold text-white">${section.title}</h5>
+            <p class="mt-3 text-sm leading-7 text-slate-200">${section.text}</p>
+          </div>
+        </article>
       `
-    )
-    .join('');
+      )
+      .join('');
 
   modal.classList.add('is-open');
   modal.setAttribute('aria-hidden', 'false');
