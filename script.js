@@ -26,7 +26,7 @@ const initialTopics = [
         text: 'Puedes compararlo con un equipo universitario que debe entregar un proyecto por fases. En vez de trabajar todo al final, se organizan por ciclos cortos, revisan avances cada pocos dias y mejoran sobre la marcha.',
       },
     ],
-    tip: 'Empieza con una definicion corta y conecta rapido con un ejemplo para enganchar al publico.',
+    tip: 'Damos un contexto general de la exposición. Es importante que la audiencia entienda que Scrum no es solo para programadores, sino una forma de organizar el trabajo en equipo que puede adaptarse a muchos escenarios diferentes.',
   },
   {
     id: 2,
