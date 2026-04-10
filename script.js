@@ -139,6 +139,107 @@ const initialTopics = [
     ],
     tip: 'Termina con una conclusion de una sola frase que sea facil de recordar.',
   },
+  {
+    id: 6,
+    title: 'Transformando la Educación con eduScrum',
+    summary: 'Cómo Scrum está revolucionando las aulas a través del aprendizaje colaborativo y la mejora continua.',
+    stage: 'todo',
+    accent: 'border-board-mint/30',
+    presenter: {
+      name: 'Erik',
+      avatar: '',
+    },
+    content: [
+      {
+        title: 'Principios de eduScrum',
+        image: '',
+        text: 'Aprendizaje basado en equipos autoorganizados, iteraciones cortas (sprints) y visualización del progreso mediante tableros Scrum.',
+      },
+      {
+        title: 'El nuevo rol docente',
+        image: '',
+        text: 'El docente actúa como facilitador y mentor, no como la única autoridad, fomentando el "Efecto Protégé" (aprender enseñando).',
+      },
+    ],
+    tip: 'Resalta que el profesor no pierde poder, sino que gana un rol de mentor más efectivo.',
+  },
+  {
+    id: 7,
+    title: 'eduScrum en el Ashram College',
+    summary: 'Caso de éxito en los Países Bajos aplicando metodologías ágiles en educación secundaria.',
+    stage: 'todo',
+    accent: 'border-board-sky/30',
+    presenter: {
+      name: 'Erik',
+      avatar: '',
+    },
+    content: [
+      {
+        title: 'Auto-organización Estudiantil',
+        image: '',
+        text: 'Los estudiantes forman equipos de cuatro personas, enseñándose mutuamente. El profesor actúa como facilitador, no como "policía".',
+      },
+      {
+        title: 'Mecánica de Clase',
+        image: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=1200&auto=format&fit=crop',
+        text: 'Los equipos usan tableros de Scrum ("flops") con columnas "Pendientes", "En proceso" y "Terminado". Los Sprints duran 4-5 semanas y finalizan con una prueba.',
+      },
+    ],
+    tip: 'Menciona que los "flops" son versiones físicas y dinámicas del tablero que los alumnos aman usar.',
+  },
+  {
+    id: 8,
+    title: 'La Definición de Diversión',
+    summary: 'La importancia del ambiente positivo y el concepto de Gezelligheid en el éxito académico.',
+    stage: 'todo',
+    accent: 'border-board-sand/30',
+    presenter: {
+      name: 'Erik',
+      avatar: '',
+    },
+    content: [
+      {
+        title: 'Definición de Diversión',
+        image: '',
+        text: 'Los alumnos de Ashram College añaden esta métrica basada en la confianza, el humor y el concepto holandés de Gezelligheid (sociabilidad y agrado).',
+      },
+      {
+        title: 'Resultados Concretos',
+        image: '',
+        text: 'Se reporta un aumento de más del 10% en las calificaciones de los exámenes, junto con una mejora significativa en habilidades sociales.',
+      },
+    ],
+    tip: 'Explica que la "Definición de Diversión" es tan importante como la "Definición de Hecho" en eduScrum.',
+  },
+  {
+    id: 9,
+    title: 'El Efecto Protegido (CCI)',
+    summary: 'Los fundamentos cognitivos de por qué enseñar a otros mejora el aprendizaje propio.',
+    stage: 'todo',
+    accent: 'border-board-coral/30',
+    presenter: {
+      name: 'Erik',
+      avatar: '',
+    },
+    content: [
+      {
+        title: 'C - Primado Cognitivo',
+        image: '',
+        text: 'Tu cerebro actúa como un filtro inteligente buscando ejemplos y analogías porque sabes que alguien más te va a preguntar "¿por qué?".',
+      },
+      {
+        title: 'C - Consolidación',
+        image: '',
+        text: 'Al hablar en voz alta y recibir feedback inmediato de los compañeros, confirmas lo que sabes y detectas errores al instante.',
+      },
+      {
+        title: 'I - Integración',
+        image: '',
+        text: 'Finalmente, la información se "pega" a la memoria a largo plazo como un esquema sólido, no como un dato suelto.',
+      },
+    ],
+    tip: 'Usa este tema para cerrar la importancia de la colaboración en eduScrum.',
+  },
 ];
 
 let topics = structuredClone(initialTopics);
