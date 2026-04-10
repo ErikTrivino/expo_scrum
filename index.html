@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scrum Board Presentation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              display: ['Trebuchet MS', 'sans-serif'],
+              body: ['Segoe UI', 'sans-serif'],
+            },
+            colors: {
+              board: {
+                night: '#0f172a',
+                panel: '#162033',
+                line: '#314158',
+                sand: '#f6e7cb',
+                coral: '#ff7a59',
+                mint: '#8de7c7',
+                sky: '#7dd3fc',
+              },
+            },
+            boxShadow: {
+              glow: '0 24px 60px rgba(15, 23, 42, 0.35)',
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="min-h-screen bg-board-night font-body text-slate-100">
+    <div class="absolute inset-0 -z-10 overflow-hidden">
+      <div class="hero-blob hero-blob-a"></div>
+      <div class="hero-blob hero-blob-b"></div>
+      <div class="grid-overlay"></div>
+    </div>
+
+    <main class="mx-auto flex min-h-screen max-w-7xl flex-col px-4 py-6 md:px-8">
+      <header class="mb-8 flex flex-col gap-6 rounded-[28px] border border-white/10 bg-white/5 p-6 shadow-glow backdrop-blur md:flex-row md:items-end md:justify-between">
+        <div class="max-w-3xl">
+          <p class="mb-3 inline-flex rounded-full border border-board-coral/40 bg-board-coral/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.28em] text-board-sand">
+            Sprint de exposicion
+          </p>
+          <h1 class="font-display text-4xl font-black leading-tight text-white md:text-6xl">
+            Scrum Board
+            <span class="block text-board-sky">Interactive Presentation</span>
+          </h1>
+          <p class="mt-4 max-w-2xl text-sm text-slate-300 md:text-base">
+            Usa cada tarjeta como una diapositiva viva. Arranca en <strong>TODO</strong>,
+            abre el contenido con clic y mueve los temas entre columnas mientras presentas.
+          </p>
+        </div>
+
+        <section class="grid grid-cols-3 gap-3 text-center text-sm md:min-w-[320px]">
+          <div class="rounded-2xl border border-white/10 bg-slate-950/35 px-4 py-3">
+            <p class="text-slate-400">Temas</p>
+            <p id="total-count" class="mt-1 text-2xl font-bold text-white">5</p>
+          </div>
+          <div class="rounded-2xl border border-white/10 bg-slate-950/35 px-4 py-3">
+            <p class="text-slate-400">Sprint</p>
+            <p class="mt-1 text-2xl font-bold text-board-sand">Live</p>
+          </div>
+          <div class="rounded-2xl border border-white/10 bg-slate-950/35 px-4 py-3">
+            <p class="text-slate-400">Flow</p>
+            <p class="mt-1 text-2xl font-bold text-board-mint">3 etapas</p>
+          </div>
+        </section>
+      </header>
+
+      <section class="mb-5 flex items-center justify-between gap-4">
+        <div>
+          <h2 class="font-display text-2xl font-bold text-white">Tablero</h2>
+          <p class="text-sm text-slate-400">Diseño base listo para reemplazar el contenido de tu exposicion.</p>
+        </div>
+        <button
+          id="reset-board"
+          class="rounded-full border border-board-sky/30 bg-board-sky/10 px-4 py-2 text-sm font-semibold text-board-sky transition hover:bg-board-sky/20"
+        >
+          Reiniciar tablero
+        </button>
+      </section>
+
+      <section class="grid flex-1 gap-5 lg:grid-cols-3">
+        <article class="board-column rounded-[28px] border border-amber-200/10 bg-white/5 p-4 backdrop-blur">
+          <div class="mb-4 flex items-center justify-between">
+            <div>
+              <p class="text-xs font-semibold uppercase tracking-[0.28em] text-board-sand">TODO</p>
+              <h3 class="font-display text-2xl font-bold">Por presentar</h3>
+            </div>
+            <span id="todo-count" class="rounded-full bg-board-sand/15 px-3 py-1 text-sm font-semibold text-board-sand">5</span>
+          </div>
+          <div id="todo-column" class="column-drop space-y-4"></div>
+        </article>
+
+        <article class="board-column rounded-[28px] border border-sky-200/10 bg-white/5 p-4 backdrop-blur">
+          <div class="mb-4 flex items-center justify-between">
+            <div>
+              <p class="text-xs font-semibold uppercase tracking-[0.28em] text-board-sky">WORKING</p>
+              <h3 class="font-display text-2xl font-bold">En explicacion</h3>
+            </div>
+            <span id="working-count" class="rounded-full bg-board-sky/15 px-3 py-1 text-sm font-semibold text-board-sky">0</span>
+          </div>
+          <div id="working-column" class="column-drop space-y-4"></div>
+        </article>
+
+        <article class="board-column rounded-[28px] border border-emerald-200/10 bg-white/5 p-4 backdrop-blur">
+          <div class="mb-4 flex items-center justify-between">
+            <div>
+              <p class="text-xs font-semibold uppercase tracking-[0.28em] text-board-mint">DONE</p>
+              <h3 class="font-display text-2xl font-bold">Ya cubierto</h3>
+            </div>
+            <span id="done-count" class="rounded-full bg-board-mint/15 px-3 py-1 text-sm font-semibold text-board-mint">0</span>
+          </div>
+          <div id="done-column" class="column-drop space-y-4"></div>
+        </article>
+      </section>
+    </main>
+
+    <div
+      id="topic-modal"
+      class="pointer-events-none fixed inset-0 z-50 flex items-center justify-center bg-slate-950/70 p-4 opacity-0 transition duration-300"
+      aria-hidden="true"
+    >
+      <div class="modal-shell w-full max-w-3xl rounded-[30px] border border-white/10 bg-[#101a2b] p-6 shadow-glow">
+        <div class="mb-5 flex items-start justify-between gap-4">
+          <div>
+            <p id="modal-stage" class="mb-2 text-xs font-semibold uppercase tracking-[0.3em] text-board-sky"></p>
+            <h3 id="modal-title" class="font-display text-3xl font-black text-white"></h3>
+            <p id="modal-subtitle" class="mt-2 text-sm text-slate-300"></p>
+          </div>
+          <button
+            id="close-modal"
+            class="rounded-full border border-white/10 px-3 py-2 text-sm text-slate-300 transition hover:bg-white/10 hover:text-white"
+            aria-label="Cerrar modal"
+          >
+            Cerrar
+          </button>
+        </div>
+
+        <div class="grid gap-5 lg:grid-cols-[1.5fr_0.9fr]">
+          <section class="rounded-[24px] border border-white/10 bg-white/5 p-5">
+            <h4 class="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-board-sand">Contenido</h4>
+            <div id="modal-content" class="space-y-3 text-sm leading-7 text-slate-200"></div>
+          </section>
+
+          <aside class="rounded-[24px] border border-white/10 bg-slate-950/30 p-5">
+            <h4 class="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-board-mint">Acciones</h4>
+            <div class="space-y-3">
+              <button data-move-target="todo" class="move-btn w-full rounded-2xl border border-board-sand/30 bg-board-sand/10 px-4 py-3 text-left text-sm text-board-sand transition hover:bg-board-sand/20">
+                Enviar a TODO
+              </button>
+              <button data-move-target="working" class="move-btn w-full rounded-2xl border border-board-sky/30 bg-board-sky/10 px-4 py-3 text-left text-sm text-board-sky transition hover:bg-board-sky/20">
+                Mover a WORKING
+              </button>
+              <button data-move-target="done" class="move-btn w-full rounded-2xl border border-board-mint/30 bg-board-mint/10 px-4 py-3 text-left text-sm text-board-mint transition hover:bg-board-mint/20">
+                Marcar como DONE
+              </button>
+            </div>
+
+            <div class="mt-5 rounded-2xl border border-white/10 bg-white/5 p-4">
+              <p class="text-xs uppercase tracking-[0.24em] text-slate-400">Tip para presentar</p>
+              <p id="modal-tip" class="mt-2 text-sm text-slate-200"></p>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

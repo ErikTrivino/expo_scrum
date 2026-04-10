@@ -1,0 +1,132 @@
+body {
+  background:
+    radial-gradient(circle at top left, rgba(255, 122, 89, 0.2), transparent 32%),
+    radial-gradient(circle at bottom right, rgba(125, 211, 252, 0.18), transparent 28%),
+    linear-gradient(135deg, #0b1020 0%, #111827 45%, #0f172a 100%);
+}
+
+.hero-blob {
+  position: absolute;
+  width: 28rem;
+  height: 28rem;
+  border-radius: 9999px;
+  filter: blur(70px);
+  opacity: 0.35;
+}
+
+.hero-blob-a {
+  top: -8rem;
+  left: -6rem;
+  background: rgba(255, 122, 89, 0.55);
+}
+
+.hero-blob-b {
+  right: -8rem;
+  bottom: -10rem;
+  background: rgba(125, 211, 252, 0.45);
+}
+
+.grid-overlay {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: radial-gradient(circle at center, black 50%, transparent 95%);
+}
+
+.board-column {
+  position: relative;
+  overflow: hidden;
+}
+
+.board-column::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  pointer-events: none;
+}
+
+.topic-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+  padding: 1rem;
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    background 180ms ease;
+  cursor: pointer;
+}
+
+.topic-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(125, 211, 252, 0.45);
+  background: linear-gradient(180deg, rgba(125, 211, 252, 0.14), rgba(255, 255, 255, 0.05));
+}
+
+.topic-card::before {
+  content: "";
+  position: absolute;
+  inset: auto -15% -55% auto;
+  width: 8rem;
+  height: 8rem;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.08);
+  filter: blur(8px);
+}
+
+.column-drop {
+  min-height: 280px;
+}
+
+.column-drop.is-active {
+  outline: 1px dashed rgba(125, 211, 252, 0.55);
+  outline-offset: 10px;
+  border-radius: 20px;
+}
+
+.modal-shell {
+  transform: translateY(18px) scale(0.98);
+  transition: transform 220ms ease;
+}
+
+#topic-modal.is-open {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+#topic-modal.is-open .modal-shell {
+  transform: translateY(0) scale(1);
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 9999px;
+  padding: 0.25rem 0.65rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.pill.todo {
+  background: rgba(246, 231, 203, 0.12);
+  color: #f6e7cb;
+}
+
+.pill.working {
+  background: rgba(125, 211, 252, 0.12);
+  color: #7dd3fc;
+}
+
+.pill.done {
+  background: rgba(141, 231, 199, 0.12);
+  color: #8de7c7;
+}
